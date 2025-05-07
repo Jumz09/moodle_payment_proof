@@ -1,0 +1,61 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template enrol_paymentproof/review_form
+
+    Template for the submission review form.
+
+    Context variables required for this template:
+    * submission_id - The ID of the submission
+    * course_id - The course ID
+    * form_action - The form action URL
+    * sesskey - Session key for security
+    * return_url - URL to return to
+}}
+
+<div class="enrol_paymentproof_review_form">
+    <form action="{{form_action}}" method="post" class="mform" id="paymentproof-review-form">
+        <input type="hidden" name="sesskey" value="{{sesskey}}">
+        <input type="hidden" name="submissionid" value="{{submission_id}}">
+        <input type="hidden" name="courseid" value="{{course_id}}">
+        <input type="hidden" name="returnurl" value="{{return_url}}">
+        
+        <div class="form-group">
+            <label for="reviewcomments">{{#str}}reviewcomments, enrol_paymentproof{{/str}}</label>
+            <textarea class="form-control" id="reviewcomments" name="reviewcomments" rows="3"></textarea>
+            <small class="form-text text-muted">{{#str}}reviewcomments_help, enrol_paymentproof{{/str}}</small>
+        </div>
+        
+        <div class="form-group">
+            <div class="d-flex">
+                <button type="submit" name="action" value="approve" class="btn btn-success mr-2"
+                        onclick="return confirm('{{#str}}approveconfirm, enrol_paymentproof{{/str}}');">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    {{#str}}approve, enrol_paymentproof{{/str}}
+                </button>
+                
+                <button type="submit" name="action" value="reject" class="btn btn-danger"
+                        onclick="return confirm('{{#str}}rejectconfirm, enrol_paymentproof{{/str}}');">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                    {{#str}}reject, enrol_paymentproof{{/str}}
+                </button>
+                
+                <a href="{{return_url}}" class="btn btn-secondary ml-auto">{{#str}}cancel{{/str}}</a>
+            </div>
+        </div>
+    </form>
+</div>

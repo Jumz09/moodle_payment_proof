@@ -1,0 +1,249 @@
+/* 
+ * Styles for the Payment Proof Enrollment Plugin
+ */
+
+/* General styles */
+.enrol_paymentproof_instructions {
+    background-color: #f8f9fa;
+    border-left: 4px solid #1177d1;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.enrol_paymentproof_submission,
+.enrol_paymentproof_review_form {
+    background-color: #ffffff;
+    border: 1px solid #e4e4e4;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.enrol_paymentproof_buttons {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Status indicators */
+.enrol_paymentproof_status {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.status-pending {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.status-approved {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-rejected {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Submission details table */
+.enrol_paymentproof_details {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.enrol_paymentproof_details th {
+    width: 30%;
+    text-align: left;
+    padding: 10px 15px;
+    vertical-align: top;
+    border-bottom: 1px solid #e4e4e4;
+    font-weight: 500;
+}
+
+.enrol_paymentproof_details td {
+    width: 70%;
+    padding: 10px 15px;
+    vertical-align: top;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+/* Upload form styles */
+.enrol_paymentproof_upload_form .form-group {
+    margin-bottom: 15px;
+}
+
+.enrol_paymentproof_upload_form .form-label {
+    font-weight: 500;
+}
+
+/* Submission list styles */
+.enrol_paymentproof_list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.enrol_paymentproof_list th {
+    background-color: #f8f9fa;
+    font-weight: 500;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.enrol_paymentproof_list td {
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: middle;
+}
+
+.enrol_paymentproof_list tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Pagination for submission list */
+.enrol_paymentproof_pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.enrol_paymentproof_pagination .pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.enrol_paymentproof_pagination .page-item {
+    display: inline;
+}
+
+.enrol_paymentproof_pagination .page-link {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+/* Form styles */
+.enrol_paymentproof_form .form-group {
+    margin-bottom: 15px;
+}
+
+.enrol_paymentproof_form .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .enrol_paymentproof_details th,
+    .enrol_paymentproof_details td {
+        display: block;
+        width: 100%;
+    }
+    
+    .enrol_paymentproof_details th {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    
+    .enrol_paymentproof_details td {
+        padding-top: 5px;
+    }
+}
+
+/* File upload styling */
+.enrol_paymentproof_filemanager {
+    margin-bottom: 20px;
+}
+
+.enrol_paymentproof_filemanager .filemanager {
+    border: 1px dashed #ced4da;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+}
+
+/* Review form styling */
+.enrol_paymentproof_review_form textarea {
+    min-height: 120px;
+}
+
+.enrol_paymentproof_review_form .btn-approve {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+.enrol_paymentproof_review_form .btn-reject {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+/* Button styling */
+.enrol_paymentproof_btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.enrol_paymentproof_btn-primary {
+    color: #fff;
+    background-color: #1177d1;
+    border-color: #1177d1;
+}
+
+.enrol_paymentproof_btn-secondary {
+    color: #6c757d;
+    background-color: #f8f9fa;
+    border-color: #6c757d;
+}
+
+/* Admin settings styles */
+.enrol_paymentproof_settings .form-group {
+    margin-bottom: 20px;
+}
+
+.enrol_paymentproof_settings .form-text {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.875rem;
+    color: #6c757d;
+}

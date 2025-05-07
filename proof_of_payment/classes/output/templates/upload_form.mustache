@@ -1,0 +1,79 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template enrol_paymentproof/upload_form
+
+    Component template for rendering the payment proof upload form.
+
+    Context variables required for this template:
+    * course - The course object
+    * issuing_form - Boolean indicating if this is a standalone form
+    * form_action - The form action URL
+    * sesskey - Session key for security
+    * course_id - The course ID
+    * payment_methods - Array of available payment methods
+}}
+
+<div class="enrol_paymentproof_upload_form">
+    {{#issuing_form}}
+        <form action="{{form_action}}" method="post" enctype="multipart/form-data" class="mform" id="paymentproof-upload-form">
+            <input type="hidden" name="sesskey" value="{{sesskey}}">
+            <input type="hidden" name="courseid" value="{{course_id}}">
+    {{/issuing_form}}
+    
+    <div class="form-group row">
+        <label for="paymentreference" class="col-md-3 col-form-label">{{#str}}paymentreference, enrol_paymentproof{{/str}}</label>
+        <div class="col-md-9">
+            <input type="text" class="form-control" id="paymentreference" name="paymentreference" required>
+            <small class="form-text text-muted">{{#str}}paymentreference_help, enrol_paymentproof{{/str}}</small>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label for="prooffile" class="col-md-3 col-form-label">{{#str}}uploadfile, enrol_paymentproof{{/str}}</label>
+        <div class="col-md-9">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="prooffile" name="prooffile" required
+                       accept=".jpg,.jpeg,.png,.pdf,.gif">
+                <label class="custom-file-label" for="prooffile">{{#str}}choosefile, core{{/str}}</label>
+            </div>
+            <small class="form-text text-muted">{{#str}}uploadfile_help, enrol_paymentproof{{/str}}</small>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label for="comments" class="col-md-3 col-form-label">{{#str}}comments, enrol_paymentproof{{/str}}</label>
+        <div class="col-md-9">
+            <textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
+            <small class="form-text text-muted">{{#str}}comments_help, enrol_paymentproof{{/str}}</small>
+        </div>
+    </div>
+    
+    {{#issuing_form}}
+        <div class="form-group row">
+            <div class="col-md-9 offset-md-3">
+                <button type="submit" class="btn btn-primary">{{#str}}submit, enrol_paymentproof{{/str}}</button>
+                <a href="{{course_url}}" class="btn btn-secondary ml-2">{{#str}}cancel{{/str}}</a>
+            </div>
+        </div>
+        </form>
+    {{/issuing_form}}
+</div>
+    </div>
+    
+    <div class="form-group row">
+        <label for="paymentdate" class="col-md-3 col-form-label">{{#str}}paymentdate, enrol_paymentproof{{/str}}
